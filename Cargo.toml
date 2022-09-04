@@ -1,0 +1,43 @@
+[package]
+name = "portfolio-rusty"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[dependencies]
+log = "0.4.14"
+console_log = "0.2.0"
+chrono = { version = "0.4.19", features = ["serde"] }
+wasm-bindgen = "0.2.82"
+sycamore = { version = "0.8.0-beta.3", features = ["suspense"] }
+sycamore-router = "0.8.0-beta.7"
+
+#Mostly neede when makeing request
+# reqwasm = "0.5.0"
+# wasm-bindgen-futures = "0.4"
+# serde = { version = "1.0.137", features = ["derive"] }
+
+#use the global trait to reduce significantly the build size
+wee_alloc = "0.4.5"
+
+[dependencies.web-sys]
+version = "0.3.4"
+features = [
+  'Document',
+  'Element',
+  'HtmlElement',
+  'Node',
+  'Window',
+  'ScrollIntoViewOptions',
+  'ScrollLogicalPosition',
+]
+
+[profile.release]
+# Do not perform backtrace for panic on release builds.
+# panic = 'abort'
+# Perform optimizations on all codegen units.
+codegen-units = 1
+# Optimize for size.
+opt-level = 's' # or 'z' to optimize "aggressively" for size
+# Enable link time optimization.
+lto = true

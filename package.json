@@ -1,0 +1,18 @@
+{
+  "name": "portfolio-rusty",
+  "version": "1.0.0",
+  "description": "Personal Portfolio",
+  "main": "index.js",
+  "scripts": {
+    "css:dev": "tailwindcss -i ./styles/tailwind.css -o ./styles/tailwind.min.css --minify --watch",
+    "css:build": "tailwindcss -i ./styles/tailwind.css -o ./styles/tailwind.min.css --minify",
+    "dev": "trunk serve",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "giornn0",
+  "license": "ISC",
+  "devDependencies": {
+    "postcss": "^8.4.16",
+    "tailwindcss": "^3.1.8"
+  }
+}
